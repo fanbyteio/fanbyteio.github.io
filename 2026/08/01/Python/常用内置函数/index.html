@@ -1,0 +1,346 @@
+<!DOCTYPE html><html lang="en" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>Python 常用内置函数与基础操作 | Yunfei’s BLOG</title><meta name="author" content="Fan Yunfei"><meta name="copyright" content="Fan Yunfei"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#fbfaf7"><meta name="description" content="常用内置函数len()获取字符串、列表、集合等对象的长度。 12len(nums)len(s)  enumerate()同时获得元素的下标和值（枚举）。 12for i, num in enumerate(nums):    print(i, num)  max() 和 min()求最大值和最小值。 123max(3, 5)          # 5min(3, 5)          # 3ma">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Python 常用内置函数与基础操作">
+<meta property="og:url" content="https://nimbusfan.github.io/2026/08/01/Python/%E5%B8%B8%E7%94%A8%E5%86%85%E7%BD%AE%E5%87%BD%E6%95%B0/index.html">
+<meta property="og:site_name" content="Yunfei’s BLOG">
+<meta property="og:description" content="常用内置函数len()获取字符串、列表、集合等对象的长度。 12len(nums)len(s)  enumerate()同时获得元素的下标和值（枚举）。 12for i, num in enumerate(nums):    print(i, num)  max() 和 min()求最大值和最小值。 123max(3, 5)          # 5min(3, 5)          # 3ma">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://nimbusfan.github.io/img/avatar.jpg">
+<meta property="article:published_time" content="2026-08-01T04:29:00.000Z">
+<meta property="article:modified_time" content="2026-08-25T06:23:10.953Z">
+<meta property="article:author" content="Fan Yunfei">
+<meta property="article:tag" content="python">
+<meta property="article:tag" content="内置函数">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://nimbusfan.github.io/img/avatar.jpg"><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Python 常用内置函数与基础操作",
+  "url": "https://nimbusfan.github.io/2026/08/01/Python/%E5%B8%B8%E7%94%A8%E5%86%85%E7%BD%AE%E5%87%BD%E6%95%B0/",
+  "image": "https://nimbusfan.github.io/img/avatar.jpg",
+  "datePublished": "2026-08-01T04:29:00.000Z",
+  "dateModified": "2026-08-25T06:23:10.953Z",
+  "author": [
+    {
+      "@type": "Person",
+      "name": "Fan Yunfei",
+      "url": "https://NimbusFan.github.io"
+    }
+  ]
+}</script><link rel="shortcut icon" href="/img/favicon.svg"><link rel="canonical" href="https://nimbusfan.github.io/2026/08/01/Python/%E5%B8%B8%E7%94%A8%E5%86%85%E7%BD%AE%E5%87%BD%E6%95%B0/index.html"><link rel="preconnect" href="//unpkg.com"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=5.5.4"><link rel="stylesheet" href="https://unpkg.com/@fortawesome/fontawesome-free@7.1.0/css/all.min.css"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!true && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#2f2a26')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#fbfaf7')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"pagination":{"enable":false,"hitsPerPage":8},"languages":{"hits_empty":"No results found for: ${query}","hits_stats":"${hits} articles found"}},
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":false},
+  copy: {
+    success: 'Copy Successful',
+    error: 'Copy Failed',
+    noSupport: 'Browser Not Supported'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: 'Just now',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: undefined,
+  lightbox: 'null',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://unpkg.com/@egjs/infinitegrid@4.13.0/dist/infinitegrid.min.js',
+    buttonText: 'Load More'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Python 常用内置函数与基础操作',
+  isHighlightShrink: false,
+  isToc: true,
+  pageType: 'post'
+}</script><style>html,body,#body-wrap{background:#fbfaf7;color:#2f2a26;}#page-header:before{background:rgba(45,39,35,.38)!important;}#recent-posts>.recent-post-item,.card-widget,#post,#page,#archive,#tag,#category{background:#fffdf8;border-color:rgba(59,52,48,.14);}</style><link rel="stylesheet" href="/css/custom.css"><meta name="generator" content="Hexo 8.1.1"></head><body><div class="bg-animation" id="web_bg" style="background-color: #f3efe8;"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/img/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">19</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">40</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">9</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/projects/"><i class="fa-fw fas fa-code"></i><span> Projects</span></a></div><div class="menus_item"><a class="site-page" href="/resume/"><i class="fa-fw fas fa-file-alt"></i><span> Resume</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-user"></i><span> About</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(/img/default_img.jpg);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">Yunfei’s BLOG</span></a><a class="nav-page-title" href="/"><span class="site-name">Python 常用内置函数与基础操作</span><span class="site-name"><i class="fa-solid fa-circle-arrow-left"></i><span>  Back to Home</span></span></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> Search</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/projects/"><i class="fa-fw fas fa-code"></i><span> Projects</span></a></div><div class="menus_item"><a class="site-page" href="/resume/"><i class="fa-fw fas fa-file-alt"></i><span> Resume</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-user"></i><span> About</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="post-info"><h1 class="post-title">Python 常用内置函数与基础操作</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2026-08-01T04:29:00.000Z" title="Created 2026-08-01 12:29:00">2026-08-01</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2026-08-25T06:23:10.953Z" title="Updated 2026-08-25 14:23:10">2026-08-25</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/Python-%E6%8A%80%E6%9C%AF%E7%AC%94%E8%AE%B0/">Python 技术笔记</a><i class="fas fa-angle-right post-meta-separator"></i><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/Python-%E6%8A%80%E6%9C%AF%E7%AC%94%E8%AE%B0/%E8%BF%9B%E9%98%B6%E7%BC%96%E7%A8%8B%E4%B8%8E%E5%B7%A5%E7%A8%8B%E5%9F%BA%E7%A1%80/">进阶编程与工程基础</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">Word Count:</span><span class="word-count">12k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">Reading Time:</span><span>44 mins.</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post Views:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="container post-content" id="article-container"><h1 id="常用内置函数"><a href="#常用内置函数" class="headerlink" title="常用内置函数"></a>常用内置函数</h1><h2 id="len"><a href="#len" class="headerlink" title="len()"></a><code>len()</code></h2><p>获取字符串、列表、集合等对象的长度。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">len</span>(nums)</span><br><span class="line"><span class="built_in">len</span>(s)</span><br></pre></td></tr></table></figure>
+
+<h2 id="enumerate"><a href="#enumerate" class="headerlink" title="enumerate()"></a><code>enumerate()</code></h2><p>同时获得元素的下标和值（枚举）。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> i, num <span class="keyword">in</span> <span class="built_in">enumerate</span>(nums):</span><br><span class="line">    <span class="built_in">print</span>(i, num)</span><br></pre></td></tr></table></figure>
+
+<h2 id="max-和-min"><a href="#max-和-min" class="headerlink" title="max() 和 min()"></a><code>max()</code> 和 <code>min()</code></h2><p>求最大值和最小值。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">max</span>(<span class="number">3</span>, <span class="number">5</span>)          <span class="comment"># 5</span></span><br><span class="line"><span class="built_in">min</span>(<span class="number">3</span>, <span class="number">5</span>)          <span class="comment"># 3</span></span><br><span class="line"><span class="built_in">max</span>([<span class="number">1</span>, <span class="number">3</span>, <span class="number">2</span>])     <span class="comment"># 3</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="sorted"><a href="#sorted" class="headerlink" title="sorted()"></a><code>sorted()</code></h2><p>返回一个新的排序结果，不修改原对象。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">nums = [<span class="number">3</span>, <span class="number">1</span>, <span class="number">2</span>]</span><br><span class="line">new_nums = <span class="built_in">sorted</span>(nums)     <span class="comment"># [1, 2, 3]</span></span><br></pre></td></tr></table></figure>
+
+<p>降序排列：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">new_nums1 = <span class="built_in">sorted</span>(nums, reverse=<span class="literal">True</span>)      <span class="comment"># [3, 2, 1]</span></span><br></pre></td></tr></table></figure>
+
+<p>字符串排序：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">new_nums2 = <span class="built_in">sorted</span>(<span class="string">&quot;eat&quot;</span>)       <span class="comment"># [&#x27;a&#x27;, &#x27;e&#x27;, &#x27;t&#x27;]</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="ord"><a href="#ord" class="headerlink" title="ord()"></a><code>ord()</code></h2><p>将字符转换成对应的 Unicode 编码数字。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">ord</span>(<span class="string">&#x27;a&#x27;</span>)</span><br><span class="line"><span class="built_in">ord</span>(<span class="string">&#x27;b&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+<p>常用来把小写字母映射到 <code>0～25</code>：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">ord</span>(<span class="string">&#x27;a&#x27;</span>) - <span class="built_in">ord</span>(<span class="string">&#x27;a&#x27;</span>)  <span class="comment"># 0</span></span><br><span class="line"><span class="built_in">ord</span>(<span class="string">&#x27;b&#x27;</span>) - <span class="built_in">ord</span>(<span class="string">&#x27;a&#x27;</span>)  <span class="comment"># 1</span></span><br><span class="line"><span class="built_in">ord</span>(<span class="string">&#x27;c&#x27;</span>) - <span class="built_in">ord</span>(<span class="string">&#x27;a&#x27;</span>)  <span class="comment"># 2</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="zip"><a href="#zip" class="headerlink" title="zip()"></a><code>zip()</code></h2><p>同时遍历多个可迭代对象。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> h, pre, suf <span class="keyword">in</span> <span class="built_in">zip</span>(height, pre_max, suf_max):</span><br><span class="line">    <span class="built_in">print</span>(h, pre, suf)</span><br></pre></td></tr></table></figure>
+
+<p>例如：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">a = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]</span><br><span class="line">b = [<span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>]</span><br><span class="line"></span><br><span class="line"><span class="built_in">list</span>(<span class="built_in">zip</span>(a, b))      <span class="comment"># [(1, 4), (2, 5), (3, 6)]</span></span><br></pre></td></tr></table></figure>
+
+<p>注意：如果几个列表长度不同，<code>zip()</code> 会在最短列表结束时停止。</p>
+<h2 id="sort"><a href="#sort" class="headerlink" title="sort()"></a><code>sort()</code></h2><p>直接修改原列表，返回值是 <code>None</code>。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nums.sort()</span><br></pre></td></tr></table></figure>
+
+<h2 id="sum"><a href="#sum" class="headerlink" title="sum()"></a><code>sum()</code></h2><p>求和：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sum</span>([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>])      <span class="comment"># 6</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="abs"><a href="#abs" class="headerlink" title="abs()"></a><code>abs()</code></h2><p>求绝对值：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">abs(-5)      # 5</span><br></pre></td></tr></table></figure>
+
+<h2 id="reversed"><a href="#reversed" class="headerlink" title="reversed()"></a><code>reversed()</code></h2><p>倒序遍历：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> num <span class="keyword">in</span> <span class="built_in">reversed</span>(nums):       <span class="comment"># 不会修改原列表</span></span><br><span class="line">    <span class="built_in">print</span>(num)</span><br></pre></td></tr></table></figure>
+
+<p>转换成列表：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">list</span>(<span class="built_in">reversed</span>(nums))</span><br></pre></td></tr></table></figure>
+
+<h2 id="any"><a href="#any" class="headerlink" title="any()"></a><code>any()</code></h2><p>只要有一个条件为真，就返回 <code>True</code>：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">any</span>([<span class="literal">False</span>, <span class="literal">True</span>, <span class="literal">False</span>])       <span class="comment"># True</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="all"><a href="#all" class="headerlink" title="all()"></a><code>all()</code></h2><p>所有条件都为真，才返回 <code>True</code>：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">all</span>([<span class="literal">True</span>, <span class="literal">True</span>, <span class="literal">False</span>])        <span class="comment"># False</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="字典dict常用操作"><a href="#字典dict常用操作" class="headerlink" title="字典dict常用操作"></a>字典<code>dict</code>常用操作</h1><h2 id="get"><a href="#get" class="headerlink" title="get()"></a><code>get()</code></h2><p>如果 <code>char</code> 存在，返回对应值；不存在则返回 <code>0</code>。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">字典.get(key, 默认值)</span><br></pre></td></tr></table></figure>
+
+<p>统计次数的经典写法：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">need[char] = need.get(char, <span class="number">0</span>) + <span class="number">1</span></span><br></pre></td></tr></table></figure>
+
+<p>等价于：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> char <span class="keyword">in</span> need:</span><br><span class="line">    need[char] += <span class="number">1</span></span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    need[char] = <span class="number">1</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="删除键"><a href="#删除键" class="headerlink" title="删除键"></a>删除键</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">del</span> hashmap[key]</span><br></pre></td></tr></table></figure>
+
+<h1 id="字符串str常用操作"><a href="#字符串str常用操作" class="headerlink" title="字符串str常用操作"></a>字符串<code>str</code>常用操作</h1><h2 id="join"><a href="#join" class="headerlink" title="join()"></a><code>join()</code></h2><p>将多个字符串拼接起来。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&#x27;&#x27;</span>.join([<span class="string">&#x27;a&#x27;</span>, <span class="string">&#x27;e&#x27;</span>, <span class="string">&#x27;t&#x27;</span>])      <span class="comment"># &#x27;aet&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="常用特殊值"><a href="#常用特殊值" class="headerlink" title="常用特殊值"></a>常用特殊值</h1><p>正无穷：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">min_len = float(&quot;inf&quot;)</span><br></pre></td></tr></table></figure>
+
+<p>负无穷：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">max_num = float(&quot;-inf&quot;)</span><br></pre></td></tr></table></figure>
+
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>Author: </span><span class="post-copyright-info"><a href="https://NimbusFan.github.io">Fan Yunfei</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>Link: </span><span class="post-copyright-info"><a href="https://nimbusfan.github.io/2026/08/01/Python/%E5%B8%B8%E7%94%A8%E5%86%85%E7%BD%AE%E5%87%BD%E6%95%B0/">https://nimbusfan.github.io/2026/08/01/Python/%E5%B8%B8%E7%94%A8%E5%86%85%E7%BD%AE%E5%87%BD%E6%95%B0/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>Copyright Notice: </span><span class="post-copyright-info">All articles on this blog are licensed under <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless otherwise stated.</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/python/">python</a><a class="post-meta__tags" href="/tags/%E5%86%85%E7%BD%AE%E5%87%BD%E6%95%B0/">内置函数</a></div><div class="post-share"><div class="social-share" data-image="/img/avatar.jpg" data-sites="facebook,x,wechat,weibo,qq"></div><link rel="stylesheet" href="https://unpkg.com/butterfly-extsrc@1.1.6/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://unpkg.com/butterfly-extsrc@1.1.6/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related" href="/2026/06/13/daily/Git%20&amp;%20GitHub/" title="Git &amp; GitHub：一文理清版本控制、分支、回退与协作流程"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info"><div class="info-1"><div class="info-item-1">Previous</div><div class="info-item-2">Git & GitHub：一文理清版本控制、分支、回退与协作流程</div></div><div class="info-2"><div class="info-item-1">最近手头事情扎堆，新项目刚起步，老项目还得交接，每天在不同的 Repo里切来切去。决定挤出点时间，把 Git 版本控制逻辑学一下。 本文根据 Git &amp; GitHub Crash Course for Beginners [2026] 整理，并结合实际开发中的常见场景进行了补充。 Git 的作用，本质上是帮我们管理项目的变化。它会记录每一次修改，让代码的演进过程变得可追踪、可比较、可回退。无论是一个人写项目，还是多人协作开发，Git 都能让我们清楚地知道：代码改了什么、是谁改的、什么时候改的，以及需要时如何回到之前的版本。add、commit、push、pull、merge 这些命令。单独看每个命令并不难，但如果只零散地记命令，一旦遇到分支冲突、版本回退或者远程同步问题，很容易不知道该从哪里下手。因此我们要先理解 Git 背后的工作流：本地修改如何变成一次提交，提交历史如何被查看和回退，分支如何支撑并行开发，远程仓库如何连接团队成员，以及 Pull Request 如何在代码合并前提供审查和讨论的空间。  Git 工作流Git 的流程可以概括为一句话： 1工作区修改代码，...</div></div></div></a><a class="pagination-related" href="/2026/08/25/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6/" title="时间复杂度：大O表示法与常见复杂度分析"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-right"><div class="info-1"><div class="info-item-1">Next</div><div class="info-item-2">时间复杂度：大O表示法与常见复杂度分析</div></div><div class="info-2"><div class="info-item-1">大O表示法大O表示法用于描述：当输入规模不断增大时，算法运行时间或占用空间的增长趋势。它不表示程序实际运行了多少秒，而是表示算法的效率会随着数据量如何变化。 简化规则： 忽略常数 忽略低阶项 连续代码的复杂度相加，最后取最大项 嵌套循环的复杂度相乘  常见时间复杂度   时间复杂度 名称 特点 常见场景    O(1) 常数复杂度 执行次数不随数据规模变化 数组按下标访问、变量赋值   O(log n) 对数复杂度 每次将问题规模缩小一部分 二分查找、每次除以 2 的循环   O(n) 线性复杂度 需要遍历一次数据 遍历数组、查找最大值、双指针   O(n log n) 线性对数复杂度 进行 log n 层操作，每层处理 n 个数据 归并排序、堆排序、快速排序平均情况   O(n²) 平方复杂度 通常需要两层完整嵌套遍历 冒泡排序、选择排序、枚举所有数对   O(n³) 立方复杂度 通常需要三层完整嵌套遍历 三层循环、部分矩阵计算   O(2ⁿ) 指数复杂度 数据每增加一个，计算量可能翻倍 枚举所有子集、暴力递归、部分回溯   O(n!) 阶乘复杂度 需要枚举所有排列，增长速度极...</div></div></div></a></nav><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> Comments</span></div></div><div class="comment-wrap"><div><div id="gitalk-container"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/img/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">Fan Yunfei</div><div class="author-info-description"></div><div class="site-data"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">19</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">40</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">9</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/NimbusFan"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons"><a class="social-icon" href="https://github.com/NimbusFan" target="_blank" title="fab fa-github"><i class="GitHub"></i></a><a class="social-icon" href="mailto:gisfanyunfei@gmail.com" target="_blank" title="fas fa-envelope"><i class="Email"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>Announcement</span></div><div class="announcement_content">I document my projects, technical notes, and spatial data analysis here.</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>Contents</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%B8%B8%E7%94%A8%E5%86%85%E7%BD%AE%E5%87%BD%E6%95%B0"><span class="toc-number">1.</span> <span class="toc-text">常用内置函数</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#len"><span class="toc-number">1.1.</span> <span class="toc-text">len()</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#enumerate"><span class="toc-number">1.2.</span> <span class="toc-text">enumerate()</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#max-%E5%92%8C-min"><span class="toc-number">1.3.</span> <span class="toc-text">max() 和 min()</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#sorted"><span class="toc-number">1.4.</span> <span class="toc-text">sorted()</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ord"><span class="toc-number">1.5.</span> <span class="toc-text">ord()</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#zip"><span class="toc-number">1.6.</span> <span class="toc-text">zip()</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#sort"><span class="toc-number">1.7.</span> <span class="toc-text">sort()</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#sum"><span class="toc-number">1.8.</span> <span class="toc-text">sum()</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#abs"><span class="toc-number">1.9.</span> <span class="toc-text">abs()</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#reversed"><span class="toc-number">1.10.</span> <span class="toc-text">reversed()</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#any"><span class="toc-number">1.11.</span> <span class="toc-text">any()</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#all"><span class="toc-number">1.12.</span> <span class="toc-text">all()</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%AD%97%E5%85%B8dict%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C"><span class="toc-number">2.</span> <span class="toc-text">字典dict常用操作</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#get"><span class="toc-number">2.1.</span> <span class="toc-text">get()</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%A0%E9%99%A4%E9%94%AE"><span class="toc-number">2.2.</span> <span class="toc-text">删除键</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2str%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C"><span class="toc-number">3.</span> <span class="toc-text">字符串str常用操作</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#join"><span class="toc-number">3.1.</span> <span class="toc-text">join()</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%B8%B8%E7%94%A8%E7%89%B9%E6%AE%8A%E5%80%BC"><span class="toc-number">4.</span> <span class="toc-text">常用特殊值</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Posts</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/08/25/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6/" title="时间复杂度：大O表示法与常见复杂度分析">时间复杂度：大O表示法与常见复杂度分析</a><time datetime="2026-08-24T16:00:00.000Z" title="Created 2026-08-25 00:00:00">2026-08-25</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/08/25/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%A3%E5%88%97%E8%A1%A8/" title="散列表：哈希函数、冲突解决与映射实现">散列表：哈希函数、冲突解决与映射实现</a><time datetime="2026-08-24T16:00:00.000Z" title="Created 2026-08-25 00:00:00">2026-08-25</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/08/25/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%BA%BF%E6%80%A7%E7%BB%93%E6%9E%84/" title="线性结构：栈、队列、双端队列与列表">线性结构：栈、队列、双端队列与列表</a><time datetime="2026-08-24T16:00:00.000Z" title="Created 2026-08-25 00:00:00">2026-08-25</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/08/01/Python/%E5%B8%B8%E7%94%A8%E5%86%85%E7%BD%AE%E5%87%BD%E6%95%B0/" title="Python 常用内置函数与基础操作">Python 常用内置函数与基础操作</a><time datetime="2026-08-01T04:29:00.000Z" title="Created 2026-08-01 12:29:00">2026-08-01</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/06/13/daily/Git%20&amp;%20GitHub/" title="Git &amp; GitHub：一文理清版本控制、分支、回退与协作流程">Git &amp; GitHub：一文理清版本控制、分支、回退与协作流程</a><time datetime="2026-06-13T13:00:00.000Z" title="Created 2026-06-13 21:00:00">2026-06-13</time></div></div></div></div></div></div></main><footer id="footer"><div class="footer-other"><div class="footer-copyright"><span class="copyright">&copy;&nbsp;2025 - 2026 By Fan Yunfei</span><span class="framework-info"><span>Framework </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 8.1.1</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.5.4</a></span></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Reading Mode"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="Toggle Between Light and Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle Between Single-column and Double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="Settings"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="Table of Contents"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="Scroll to Comments"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="Back to Top"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=5.5.4"></script><script src="/js/main.js?v=5.5.4"></script><div class="js-pjax"><script>(() => {
+  const isShuoshuo = GLOBAL_CONFIG_SITE.pageType === 'shuoshuo'
+  const option = null
+
+  const commentCount = n => {
+    const isCommentCount = document.querySelector('#post-meta .gitalk-comment-count')
+    if (isCommentCount) {
+      isCommentCount.textContent= n
+    }
+  }
+
+  const initGitalk = (el, path) => {
+    if (isShuoshuo) {
+      window.shuoshuoComment.destroyGitalk = () => {
+        if (el.children.length) {
+          el.innerHTML = ''
+          el.classList.add('no-comment')
+        }
+      }
+    }
+
+    const gitalk = new Gitalk({
+      clientID: 'Ov23licoZTpI8uUvbVWs',
+      clientSecret: '57d90b175c0a229e57775f5235499c2590bf0a84',
+      repo: 'NimbusFan.github.io',
+      owner: 'NimbusFan',
+      admin: ['NimbusFan'],
+      updateCountCallback: commentCount,
+      ...option,
+      id: isShuoshuo ? path : (option && option.id) || '5f5810d0c40a48c2772f6f32ca019dd0'
+    })
+
+    gitalk.render('gitalk-container')
+  }
+
+  const loadGitalk = async(el, path) => {
+    if (typeof Gitalk === 'function') initGitalk(el, path)
+    else {
+      await btf.getCSS('https://unpkg.com/gitalk@1.8.0/dist/gitalk.css')
+      await btf.getScript('https://unpkg.com/gitalk@1.8.0/dist/gitalk.min.js')
+      initGitalk(el, path)
+    }
+  }
+
+  if (isShuoshuo) {
+    'Gitalk' === 'Gitalk'
+      ? window.shuoshuoComment = { loadComment: loadGitalk }
+      : window.loadOtherComment = loadGitalk
+    return
+  }
+
+  if ('Gitalk' === 'Gitalk' || !false) {
+    if (false) btf.loadComment(document.getElementById('gitalk-container'), loadGitalk)
+    else loadGitalk()
+  } else {
+    window.loadOtherComment = loadGitalk
+  }
+})()</script></div><script src="https://unpkg.com/pjax@0.2.8/pjax.min.js" defer="defer"></script><script>document.addEventListener('DOMContentLoaded', () => {
+  const pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+  window.pjax = new Pjax({
+    elements: 'a:not([target="_blank"])',
+    selectors: pjaxSelectors,
+    cacheBust: false,
+    analytics: false,
+    scrollRestoration: false
+  })
+
+  const triggerPjaxFn = (val) => {
+    if (!val) return
+    Object.values(val).forEach(fn => {
+      try {
+        fn()
+      } catch (err) {
+        console.debug('Pjax callback failed:', err)
+      }
+    })
+  }
+
+  document.addEventListener('pjax:send', () => {
+    // removeEventListener
+    btf.removeGlobalFnEvent('pjaxSendOnce')
+    btf.removeGlobalFnEvent('themeChange')
+
+    // reset readmode
+    const $bodyClassList = document.body.classList
+    if ($bodyClassList.contains('read-mode')) $bodyClassList.remove('read-mode')
+
+    triggerPjaxFn(window.globalFn.pjaxSend)
+  })
+
+  document.addEventListener('pjax:complete', () => {
+    btf.removeGlobalFnEvent('pjaxCompleteOnce')
+    document.querySelectorAll('script[data-pjax]').forEach(item => {
+      const newScript = document.createElement('script')
+      const content = item.text || item.textContent || item.innerHTML || ""
+      Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+      newScript.appendChild(document.createTextNode(content))
+      item.parentNode.replaceChild(newScript, item)
+    })
+
+    triggerPjaxFn(window.globalFn.pjaxComplete)
+  })
+
+  document.addEventListener('pjax:error', e => {
+    if (e.request.status === 404) {
+      false
+        ? pjax.loadUrl('/404.html')
+        : window.location.href = e.request.responseURL
+    }
+  })
+})</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">Search</span><i class="fas fa-spinner fa-pulse" id="loading-status" hidden="hidden"></i><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="text-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  Loading Database</span></div><div class="local-search-input"><input placeholder="Search for Posts" type="text"/></div><hr/><div id="local-search-results"></div><div class="ais-Pagination" id="local-search-pagination" style="display:none;"><ul class="ais-Pagination-list"></ul></div><div id="local-search-stats"></div></div><div id="search-mask"></div><script src="/js/search/local-search.js?v=5.5.4"></script></div></div></body></html>

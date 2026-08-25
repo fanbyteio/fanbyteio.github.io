@@ -1,0 +1,408 @@
+<!DOCTYPE html><html lang="en" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>Python 基础语法：变量、类型与表达式 | Yunfei’s BLOG</title><meta name="author" content="Fan Yunfei"><meta name="copyright" content="Fan Yunfei"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#fbfaf7"><meta name="description" content="字面量常用的值的类型：  注释单行注释： 1# 单行注释  多行注释： 1234&quot;&quot;&quot;    多行注释    使用一对三个双引号引起来&quot;&quot;&quot;   变量12a &#x3D; 10   # 赋值a &#x3D; a - 10  #运算  print语句可以输出多份数据 1print(内容1，内容2，......，内容N)   数据类型123456# 直接查看数据">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Python 基础语法：变量、类型与表达式">
+<meta property="og:url" content="https://nimbusfan.github.io/2026/03/12/Python/%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/index.html">
+<meta property="og:site_name" content="Yunfei’s BLOG">
+<meta property="og:description" content="字面量常用的值的类型：  注释单行注释： 1# 单行注释  多行注释： 1234&quot;&quot;&quot;    多行注释    使用一对三个双引号引起来&quot;&quot;&quot;   变量12a &#x3D; 10   # 赋值a &#x3D; a - 10  #运算  print语句可以输出多份数据 1print(内容1，内容2，......，内容N)   数据类型123456# 直接查看数据">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://nimbusfan.github.io/img/avatar.jpg">
+<meta property="article:published_time" content="2026-03-12T07:30:00.000Z">
+<meta property="article:modified_time" content="2026-08-25T06:17:18.617Z">
+<meta property="article:author" content="Fan Yunfei">
+<meta property="article:tag" content="Python">
+<meta property="article:tag" content="基础语法">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://nimbusfan.github.io/img/avatar.jpg"><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Python 基础语法：变量、类型与表达式",
+  "url": "https://nimbusfan.github.io/2026/03/12/Python/%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/",
+  "image": "https://nimbusfan.github.io/img/avatar.jpg",
+  "datePublished": "2026-03-12T07:30:00.000Z",
+  "dateModified": "2026-08-25T06:17:18.617Z",
+  "author": [
+    {
+      "@type": "Person",
+      "name": "Fan Yunfei",
+      "url": "https://NimbusFan.github.io"
+    }
+  ]
+}</script><link rel="shortcut icon" href="/img/favicon.svg"><link rel="canonical" href="https://nimbusfan.github.io/2026/03/12/Python/%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/index.html"><link rel="preconnect" href="//unpkg.com"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=5.5.4"><link rel="stylesheet" href="https://unpkg.com/@fortawesome/fontawesome-free@7.1.0/css/all.min.css"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!true && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#2f2a26')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#fbfaf7')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"pagination":{"enable":false,"hitsPerPage":8},"languages":{"hits_empty":"No results found for: ${query}","hits_stats":"${hits} articles found"}},
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":false},
+  copy: {
+    success: 'Copy Successful',
+    error: 'Copy Failed',
+    noSupport: 'Browser Not Supported'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: 'Just now',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: undefined,
+  lightbox: 'null',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://unpkg.com/@egjs/infinitegrid@4.13.0/dist/infinitegrid.min.js',
+    buttonText: 'Load More'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Python 基础语法：变量、类型与表达式',
+  isHighlightShrink: false,
+  isToc: true,
+  pageType: 'post'
+}</script><style>html,body,#body-wrap{background:#fbfaf7;color:#2f2a26;}#page-header:before{background:rgba(45,39,35,.38)!important;}#recent-posts>.recent-post-item,.card-widget,#post,#page,#archive,#tag,#category{background:#fffdf8;border-color:rgba(59,52,48,.14);}</style><link rel="stylesheet" href="/css/custom.css"><meta name="generator" content="Hexo 8.1.1"></head><body><div class="bg-animation" id="web_bg" style="background-color: #f3efe8;"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/img/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">19</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">40</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">9</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/projects/"><i class="fa-fw fas fa-code"></i><span> Projects</span></a></div><div class="menus_item"><a class="site-page" href="/resume/"><i class="fa-fw fas fa-file-alt"></i><span> Resume</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-user"></i><span> About</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(/img/default_img.jpg);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">Yunfei’s BLOG</span></a><a class="nav-page-title" href="/"><span class="site-name">Python 基础语法：变量、类型与表达式</span><span class="site-name"><i class="fa-solid fa-circle-arrow-left"></i><span>  Back to Home</span></span></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> Search</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/projects/"><i class="fa-fw fas fa-code"></i><span> Projects</span></a></div><div class="menus_item"><a class="site-page" href="/resume/"><i class="fa-fw fas fa-file-alt"></i><span> Resume</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-user"></i><span> About</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="post-info"><h1 class="post-title">Python 基础语法：变量、类型与表达式</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2026-03-12T07:30:00.000Z" title="Created 2026-03-12 15:30:00">2026-03-12</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2026-08-25T06:17:18.617Z" title="Updated 2026-08-25 14:17:18">2026-08-25</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/Python-%E6%8A%80%E6%9C%AF%E7%AC%94%E8%AE%B0/">Python 技术笔记</a><i class="fas fa-angle-right post-meta-separator"></i><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/Python-%E6%8A%80%E6%9C%AF%E7%AC%94%E8%AE%B0/%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95%E4%B8%8E%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">基础语法与数据结构</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">Word Count:</span><span class="word-count">13k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">Reading Time:</span><span>48 mins.</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post Views:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="container post-content" id="article-container"><h1 id="字面量"><a href="#字面量" class="headerlink" title="字面量"></a>字面量</h1><p>常用的值的类型：<br><img src="https://raw.githubusercontent.com/NimbusFan/blog-images/main/assets/%E5%B8%B8%E7%94%A8%E7%9A%84%E5%80%BC%E7%9A%84%E7%B1%BB%E5%9E%8B.png" alt="常用的值的类型.png"></p>
+<hr>
+<h1 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h1><p>单行注释：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 单行注释</span></span><br></pre></td></tr></table></figure>
+
+<p>多行注释：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">    多行注释</span></span><br><span class="line"><span class="string">    使用一对三个双引号引起来</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<h1 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">a = <span class="number">10</span>   <span class="comment"># 赋值</span></span><br><span class="line">a = a - <span class="number">10</span>  <span class="comment">#运算</span></span><br></pre></td></tr></table></figure>
+
+<p>print语句可以输出多份数据</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(内容<span class="number">1</span>，内容<span class="number">2</span>，......，内容N)</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h1 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 直接查看数据类型</span></span><br><span class="line">string_type = <span class="built_in">type</span>(<span class="string">&quot;fanyunfei&quot;</span>)  </span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看变量的数据类型</span></span><br><span class="line">name = <span class="string">&quot;fanyunfei&quot;</span></span><br><span class="line">name_type = <span class="built_in">type</span>(name)  </span><br></pre></td></tr></table></figure>
+
+<hr>
+<h1 id="数据类型转换"><a href="#数据类型转换" class="headerlink" title="数据类型转换"></a>数据类型转换</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">int</span>()   <span class="comment"># 转整数</span></span><br><span class="line"><span class="built_in">float</span>()  <span class="comment"># 转浮点数</span></span><br><span class="line"><span class="built_in">str</span>()   <span class="comment"># 转字符串</span></span><br></pre></td></tr></table></figure>
+
+<p>注意：只含有数字的字符串才可转为整数&#x2F;浮点数，但浮点数形式的字符串无法直接转整数</p>
+<hr>
+<h1 id="标识符"><a href="#标识符" class="headerlink" title="标识符"></a>标识符</h1><h2 id="标识符命名规则："><a href="#标识符命名规则：" class="headerlink" title="标识符命名规则："></a>标识符命名规则：</h2><p>（1）内容限定：</p>
+<p>​    只允许出现中文、字母、数字、下划线。</p>
+<p>​    不推荐使用中文，不能以数字作为开头</p>
+<p>（2）大小写敏感</p>
+<p>（3）不可使用关键字</p>
+<h2 id="Python所有关键字"><a href="#Python所有关键字" class="headerlink" title="Python所有关键字"></a>Python所有关键字</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> keyword</span><br><span class="line"><span class="built_in">print</span>(keyword.kwlist)</span><br></pre></td></tr></table></figure>
+
+<p>python所有的关键字：</p>
+<p>‘False’, ‘None’, ‘True’, ‘and’, ‘as’, ‘assert’, ‘async’, ‘await’, ‘break’, ‘class’, ‘continue’, ‘def’, ‘del’, ‘elif’, ‘else’, ‘except’, ‘finally’, ‘for’, ‘from’, ‘global’, ‘if’, ‘import’, ‘in’, ‘is’, ‘lambda’, ‘nonlocal’, ‘not’, ‘or’, ‘pass’, ‘raise’, ‘return’, ‘try’, ‘while’, ‘with’, ‘yield’</p>
+<hr>
+<h1 id="运算符"><a href="#运算符" class="headerlink" title="运算符"></a>运算符</h1><h2 id="基础运算符"><a href="#基础运算符" class="headerlink" title="基础运算符"></a>基础运算符</h2><table>
+<thead>
+<tr>
+<th align="center">+</th>
+<th align="center">加</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">-</td>
+<td align="center">减</td>
+</tr>
+<tr>
+<td align="center">*</td>
+<td align="center">乘</td>
+</tr>
+<tr>
+<td align="center">&#x2F;</td>
+<td align="center">除</td>
+</tr>
+<tr>
+<td align="center">&#x2F;&#x2F;</td>
+<td align="center">整除</td>
+</tr>
+<tr>
+<td align="center">%</td>
+<td align="center">取余</td>
+</tr>
+<tr>
+<td align="center">**</td>
+<td align="center">指数</td>
+</tr>
+</tbody></table>
+<h2 id="复合赋值运算符"><a href="#复合赋值运算符" class="headerlink" title="复合赋值运算符"></a>复合赋值运算符</h2><table>
+<thead>
+<tr>
+<th align="center">+&#x3D;</th>
+<th align="center">c +&#x3D; a等效于c &#x3D; c + a</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">-&#x3D;</td>
+<td align="center">c -&#x3D; a等效于c &#x3D; c - a</td>
+</tr>
+<tr>
+<td align="center">*&#x3D;</td>
+<td align="center">c *&#x3D; a等效于c &#x3D; c * a</td>
+</tr>
+<tr>
+<td align="center">&#x2F;&#x3D;</td>
+<td align="center">c &#x2F;&#x3D; a等效于c &#x3D; c &#x2F; a</td>
+</tr>
+<tr>
+<td align="center">&#x2F;&#x2F;&#x3D;</td>
+<td align="center">c &#x2F;&#x2F;&#x3D; a等效于c &#x3D; c &#x2F;&#x2F; a</td>
+</tr>
+<tr>
+<td align="center">%&#x3D;</td>
+<td align="center">c %&#x3D; a等效于c &#x3D; c % a</td>
+</tr>
+<tr>
+<td align="center">**&#x3D;</td>
+<td align="center">c **&#x3D; a等效于c &#x3D; c ** a</td>
+</tr>
+</tbody></table>
+<h2 id="多变量赋值"><a href="#多变量赋值" class="headerlink" title="多变量赋值"></a>多变量赋值</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">left, right = <span class="number">0</span>, <span class="built_in">len</span>(nums) - <span class="number">1</span>   </span><br></pre></td></tr></table></figure>
+<p>等价于：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">left = <span class="number">0</span></span><br><span class="line">right = <span class="built_in">len</span>(nums) - <span class="number">1</span></span><br></pre></td></tr></table></figure>
+<p>也可用于交换变量：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">a, b = b, a</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h1 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h1><h2 id="字符串的三种定义方式"><a href="#字符串的三种定义方式" class="headerlink" title="字符串的三种定义方式"></a>字符串的三种定义方式</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">name = <span class="string">&#x27;fanyunfei&#x27;</span>  <span class="comment"># 单引号定义法</span></span><br><span class="line">name = <span class="string">&quot;fanyunfei&quot;</span>  <span class="comment">#双引号定义法</span></span><br><span class="line">name = <span class="string">&quot;&quot;&quot;fanyunfei&quot;&quot;&quot;</span>  <span class="comment">#三引号定义法，如果被变量接受，就作为字符串，如果不被接受就作为注释</span></span><br></pre></td></tr></table></figure>
+
+<p>引号的嵌套：（1）可以使用\进行转义，解除引号作用，变成普通字符串（2）单引号内可以写双引号，双引号内可以写单引号</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Hello\nWorld&quot;</span>)    <span class="comment"># \n,换行符</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Hello\tWorld&quot;</span>)    <span class="comment"># \t,制表符</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Hello&quot;</span>，end = <span class="string">&#x27;&#x27;</span>)  <span class="comment"># print输出后不换行</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="字符串拼接"><a href="#字符串拼接" class="headerlink" title="字符串拼接"></a>字符串拼接</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="string">&quot;fanyunfei&quot;</span> + <span class="string">&quot;英俊潇洒风流倜傥有钱多金智商高&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+<p>注意：此方法无法和非字符串类型进行拼接</p>
+<h2 id="字符串格式化"><a href="#字符串格式化" class="headerlink" title="字符串格式化"></a>字符串格式化</h2><p>通过占位的形式拼接字符串。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">name = <span class="string">&quot;pitejingji&quot;</span></span><br><span class="line">set_up_year = <span class="number">2026</span></span><br><span class="line">stock_price = <span class="number">19.99</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;%s成立于 %d年，今天的股价是%f&quot;</span> %(name,set_up_year,stock_price))</span><br></pre></td></tr></table></figure>
+
+<h2 id="字符串格式化的精度控制"><a href="#字符串格式化的精度控制" class="headerlink" title="字符串格式化的精度控制"></a>字符串格式化的精度控制</h2><p>使用辅助符号”m.n”来控制数据的宽度和精度</p>
+<p>m，控制宽度，要求是数字(很少使用)，如果设置的宽度小于数字自身，不生效</p>
+<p>.n，控制小数点精度，要求是数字，会进行小数的四舍五入</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">num1 = <span class="number">12.3456</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;数字12.34宽度限制7，小数精度3，结果是：%7.3f&quot;</span> %num1)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;数字12.34宽度限制10，小数精度6，结果是：%10.6f&quot;</span> %num1)</span><br></pre></td></tr></table></figure>
+
+<h2 id="快速字符串格式化"><a href="#快速字符串格式化" class="headerlink" title="快速字符串格式化"></a>快速字符串格式化</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="string">f&quot;<span class="subst">&#123;name&#125;</span>成立于<span class="subst">&#123;set_up_year&#125;</span>年，今天的股价是<span class="subst">&#123;stock_price&#125;</span>&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+<p>注意：此方法不会做精度控制。</p>
+<h2 id="对表达式进行格式化"><a href="#对表达式进行格式化" class="headerlink" title="对表达式进行格式化"></a>对表达式进行格式化</h2><p>表达式指一个具有明确结果的代码语句。如1+1，type(“fanyunfei”)。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="string">&quot;1 + 1的结果是：%d&quot;</span> %(<span class="number">1</span> + <span class="number">1</span>))</span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&quot;1 + 1的结果是：<span class="subst">&#123;<span class="number">1</span> +<span class="number">1</span>&#125;</span>&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;字符串在python中的类型是：%s&quot;</span> %<span class="built_in">type</span>(<span class="string">&quot;fanyunfei&quot;</span>))</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h1 id="数据输入"><a href="#数据输入" class="headerlink" title="数据输入"></a>数据输入</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">input</span>()    <span class="comment">#获取键盘输入的数据</span></span><br><span class="line"><span class="built_in">input</span>(提示信息)    <span class="comment"># 在使用者输入内容之前显示提示信息</span></span><br></pre></td></tr></table></figure>
+
+<p>注意：input得到的数据永远都是字符串类型。</p>
+<div class="note default simple"><p><strong>Repository</strong></p>
+<p>本章示例代码已归档至 GitHub，可用于本地复现、调试与扩展。</p>
+<p><a class="btn-beautify " target="_blank" rel="noopener" href="https://github.com/NimbusFan/Python-Zero-to-Hero/tree/main/Stage1_Core_Basics/01_Data_Type" title="fab fa-github"><span>fab fa-github</span></a></p>
+</div>
+
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>Author: </span><span class="post-copyright-info"><a href="https://NimbusFan.github.io">Fan Yunfei</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>Link: </span><span class="post-copyright-info"><a href="https://nimbusfan.github.io/2026/03/12/Python/%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/">https://nimbusfan.github.io/2026/03/12/Python/%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>Copyright Notice: </span><span class="post-copyright-info">All articles on this blog are licensed under <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless otherwise stated.</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/Python/">Python</a><a class="post-meta__tags" href="/tags/%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/">基础语法</a></div><div class="post-share"><div class="social-share" data-image="/img/avatar.jpg" data-sites="facebook,x,wechat,weibo,qq"></div><link rel="stylesheet" href="https://unpkg.com/butterfly-extsrc@1.1.6/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://unpkg.com/butterfly-extsrc@1.1.6/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related" href="/2026/03/11/daily/Hexo%20%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/" title="Hexo 博客搭建：GitHub Pages 部署与 Butterfly 主题配置"><img class="cover" src="/img/bg.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="info"><div class="info-1"><div class="info-item-1">Previous</div><div class="info-item-2">Hexo 博客搭建：GitHub Pages 部署与 Butterfly 主题配置</div></div><div class="info-2"><div class="info-item-1">在学习和开发过程中，零散的代码片段、配置记录和排错经验很容易被遗忘，但是只把笔记保存在本地也不是长久之计，于是我着手搭建了一个可以长期维护、方便检索、也能够对外展示的BLOG。 我选择的是 Hexo + GitHub Pages + Butterfly 这一套方案：  Hexo：生成静态博客，部署简单，生态成熟； GitHub Pages：免费托管静态网页，适合个人技术博客； Butterfly：基于 Hexo 的高可配置主题，视觉效果和功能扩展都比较完善。  这篇文章记录从初始化、本地预览、GitHub Pages 部署，到 Butterfly 主题配置过程中遇到的问题和解决方法。  环境准备在开始之前，需要先安装以下工具：    工具 作用    Node.js 提供 npm 环境，用于安装 Hexo 和相关依赖   Git 用于拉取主题、管理代码和部署到 GitHub   Hexo 静态博客生成器   GitHub Pages 博客网页托管平台   安装完成后，可以在终端中检查版本： 123node -vnpm -vgit --version  确认环境正常后，安装 Hex...</div></div></div></a><a class="pagination-related" href="/2026/03/13/Python/%E6%9D%A1%E4%BB%B6%E5%88%A4%E6%96%AD%E4%B8%8E%E9%80%BB%E8%BE%91%E6%8E%A7%E5%88%B6/" title="Python 条件判断与逻辑控制"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-right"><div class="info-1"><div class="info-item-1">Next</div><div class="info-item-2">Python 条件判断与逻辑控制</div></div><div class="info-2"><div class="info-item-1">布尔类型和比较运算符布尔类型在 Python 中，布尔类型的字面量用 True 表示真，False 表示假。 比较运算符在逻辑判断中，我们经常需要对比两个值。Python 提供了以下比较运算符：    运算符 描述说明    == 判断内容是否相等，满足为True，不满足为False   != 判断内容是否不相等，满足为True，不满足为 False   &gt; 判断运算符左侧内容是否大于右侧满足为True，不满足为False   &lt; 判断运算符左侧内容是否小于右侧满足为True，不满足为 False   &gt;= 判断运算符左侧内容是否大于等于右侧满足为True，不满足为 False   &lt;= 判断运算符左侧内容是否小于等于右侧满足为True，不满足为 False    if 语句最基础的条件判断语句格式如下： 12345if 要判断的条件:    满足条件时要做的事情1    满足条件时要做的事情2    ...    满足条件时要做的事情N   ⚠️ 注意事项：  判断条件的结果一定要是 bool 类型 。 判断条件后必须要有冒号 : 。 归属于 if 语句...</div></div></div></a></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>Related Articles</span></div><div class="relatedPosts-list"><a class="pagination-related" href="/2026/03/18/Python/%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C/" title="Python 文件读写与数据持久化"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2026-03-18</div><div class="info-item-2">Python 文件读写与数据持久化</div></div><div class="info-2"><div class="info-item-1">文件的编码1.什么是编码?编码就是一种规则集合，记录了内容和二进制间进行相互转换的逻辑。编码有许多种，最常用的是UTF-8编码2.为什么需要使用编码?计算机只认识0和1，所以需要将内容翻译成0和1才能保存在计算机中。同时也需要编码，将计算机保存的0和1，反向翻译回可以识别的内容。  文件的读取打开文件使用open函数打开一个已经存在的文件，或者创建一个新文件，语法:open(name, mode, encoding) 1f= open(&#x27;python.txt&#x27;,&#x27;r&#x27;, encoding=” UTF-8)		#encoding的顺序不是第三位，所以不能用位置参数，用关键字参数直接指定   name:要打开的目标文件名的字符串(可以包含文件所在的具体路径)。 mode:设置打开文件的模式:只读、写入、追加等。 encoding:编码格式(推荐使用UTF-8)  注意:此时的f是open函数的文件对象，对象是Python中一种特殊的数据类型，拥有属性和方法，可以使用对象.属性或对象.方法对其进行访问    模式 描述    r 以只读方式打开文...</div></div></div></a><a class="pagination-related" href="/2026/03/16/Python/%E6%95%B0%E6%8D%AE%E5%AE%B9%E5%99%A8/" title="Python 数据结构：列表、元组、集合与字典"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2026-03-16</div><div class="info-item-2">Python 数据结构：列表、元组、集合与字典</div></div><div class="info-2"><div class="info-item-1">数据容器一种可以容纳多份数据的数据类型，每一份数据称之为1个元素。元素可以是任意类型的数据。 数据容器根据是否支持重复元素、是否可以修改、是否有序的不同，分为5类，分别是:列表(list)、元组(tuple)、字符串(str)、集合(set)、字典(dict)  list列表的定义和特点定义123456789# 字面量[元素1，元素2，元素3，元素4，...]# 定义变量变量名称 = [元素1，元素2，元素3，元素4，...]# 定义空列表变量名称 = []变量名称 = list()  特点 可以容纳多个元素（上限为2**63-1、9223372036854775807个） 可以容纳不同类型的元素（混装） 数据是有序存储的（有下标序号） 允许重复数据存在 可以修改（增加或删除元素等） 支持嵌套  列表的下标（索引）通过下标索引可取出列表中特定位置的数据 正向索引 1234my_list = [&quot;fanyunfei&quot;, &quot;dashuaibi&quot;, &quot;youqianduojin&quot;]print(my_list[0])    # ...</div></div></div></a><a class="pagination-related" href="/2026/03/24/Python/%E5%BC%82%E5%B8%B8%E3%80%81%E6%A8%A1%E5%9D%97%E4%B8%8E%E5%8C%85/" title="Python 异常处理与模块化开发"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2026-03-24</div><div class="info-item-2">Python 异常处理与模块化开发</div></div><div class="info-2"><div class="info-item-1">异常1.什么是异常:程序运行的过程中出现了错误2.bug是什么意思:就是指异常的意思，历史上因为小虫子(bug)导致计算机失灵的案例，所以延续至今，bug就代表软件出现错误。  异常的捕获捕获常规异常：1234try:	可能发生错误的代码except:	如果出现异常执行的代码 捕获指定异常：1234try:	print(name)except NameError as e:	print(&#x27;变量名称未定义错误&#x27;) 捕获多个异常：当捕获多个异常时，把要捕获的异常类型的名字放在except 后，并使用元组的方式进行书写。 1234try:	print(1/0)except (NameError, ZeroDivisionError):	print(&#x27;ZeroDivision错误...&#x27;) 异常else：else表示的是如果没有异常要执行的代码。 123456try:	print(1)except Exception as e:	print(e)else:	print(&#x27;我是else，是没有异常的时候执行的代码) 异常的finally：f...</div></div></div></a><a class="pagination-related" href="/2026/05/21/Python/SQL/" title="Python 数据库编程：SQL 语法与 MySQL 实践"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2026-05-21</div><div class="info-item-2">Python 数据库编程：SQL 语法与 MySQL 实践</div></div><div class="info-2"><div class="info-item-1">基础命令SQL语言分类：  DDL (Data Definition Language)数据定义 DML (Data Manipulation Language)数据操作 DCL(Data Control Language)数据控制 DQL (Data Query Language)数据查询  MySQL命令行环境下的基础命令:    SQL命令 结果    mysql -uroot -p 以root用户，通过密码进行登录   show databases； 查看有哪些数据库   use 数据库名; 使用某个数据库   show tables; 查看数据库内有哪些表   exit 退出MySQL的命令行环境    SQL的语法特征 大小写不敏感 可以单行或多行书写，最后以;号结束 SQL支持注释: 单行注释：– 注释内容(–后面一定要有一个空格) 单行注释：# 注释内容(#后面可以不加空格，推荐加上) 多行注释：/* 注释内容 */     DDL-数据定义库管理1234567891011121314-- 查看数据库SHOW DATABASES;-- 使用数据库USE 数据库名称...</div></div></div></a><a class="pagination-related" href="/2026/05/28/Python/PySpark/" title="Python 大数据处理：PySpark RDD 编程基础"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2026-05-28</div><div class="info-item-2">Python 大数据处理：PySpark RDD 编程基础</div></div><div class="info-2"><div class="info-item-1">基础准备PySpark的编程模型：  通过SparkContext对象，完成数据输入 输入数据后得到RDD对象，对RDD对象进行迭代计算 最终通过RDD对象的成员方法，完成数据输出工作  123456789101112131415161718from pyspark import SparkConf, SparkContext    # 创建SparkConf对象————链式调用conf = SparkConf().setMaster(&quot;local[*]&quot;).setAppName(&quot;test_spark_app&quot;)    # 以下这段等同于上面这一行的作用,  # conf = SparkConf()  # conf.setMaster(&quot;local[*]&quot;)  # conf.setAppName(&quot;test_spark_app&quot;)    # 基于SparkConf类对象创建SparkContext对象  sc = SparkContext(conf = conf)    # 打印PySpark的运行...</div></div></div></a><a class="pagination-related" href="/2026/04/14/Python/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/" title="Python 面向对象编程：类、对象与核心特性"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2026-04-14</div><div class="info-item-2">Python 面向对象编程：类、对象与核心特性</div></div><div class="info-2"><div class="info-item-1">初识对象在程序中是可以做到和生活中那样，设计表格、生产表格、填写表格的组织形式的。 123456789101112# 在程序中设计表格，我们称之为:设计类(class)class Student:	name = None	# 在程序中打印生产表格，我们称之为:创建对象# 基于类创建对象stu_1 = Student()stu_2 = Student()# 在程序中填写表格，我们称之为:对象属性赋值stu_1.name =&quot;周杰轮&quot;    # 为学生1对象赋予名称属性值stu_2.name =&quot;林军杰&quot;    # 为学生2对象赋予名称属性值  成员方法类的语法：1234class 类名称：    # class是关键字，表示要定义类	类的属性      # 类的属性，即定义在类中的变量（成员变量）		类的行为      # 类的行为，即定义在类中的函数（成员方法） 注意：函数是写在类外的，定义在类内部的函数习惯上称为方法 成员方法的语法1234567class 类名称:	成员变量		def 成员方法(self, 参数列表)：		成员方法体		...</div></div></div></a></div></div><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> Comments</span></div></div><div class="comment-wrap"><div><div id="gitalk-container"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/img/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">Fan Yunfei</div><div class="author-info-description"></div><div class="site-data"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">19</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">40</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">9</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/NimbusFan"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons"><a class="social-icon" href="https://github.com/NimbusFan" target="_blank" title="fab fa-github"><i class="GitHub"></i></a><a class="social-icon" href="mailto:gisfanyunfei@gmail.com" target="_blank" title="fas fa-envelope"><i class="Email"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>Announcement</span></div><div class="announcement_content">I document my projects, technical notes, and spatial data analysis here.</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>Contents</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%AD%97%E9%9D%A2%E9%87%8F"><span class="toc-number">1.</span> <span class="toc-text">字面量</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%B3%A8%E9%87%8A"><span class="toc-number">2.</span> <span class="toc-text">注释</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%8F%98%E9%87%8F"><span class="toc-number">3.</span> <span class="toc-text">变量</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="toc-number">4.</span> <span class="toc-text">数据类型</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2"><span class="toc-number">5.</span> <span class="toc-text">数据类型转换</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%A0%87%E8%AF%86%E7%AC%A6"><span class="toc-number">6.</span> <span class="toc-text">标识符</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A0%87%E8%AF%86%E7%AC%A6%E5%91%BD%E5%90%8D%E8%A7%84%E5%88%99%EF%BC%9A"><span class="toc-number">6.1.</span> <span class="toc-text">标识符命名规则：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Python%E6%89%80%E6%9C%89%E5%85%B3%E9%94%AE%E5%AD%97"><span class="toc-number">6.2.</span> <span class="toc-text">Python所有关键字</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-number">7.</span> <span class="toc-text">运算符</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9F%BA%E7%A1%80%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-number">7.1.</span> <span class="toc-text">基础运算符</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A4%8D%E5%90%88%E8%B5%8B%E5%80%BC%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-number">7.2.</span> <span class="toc-text">复合赋值运算符</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A4%9A%E5%8F%98%E9%87%8F%E8%B5%8B%E5%80%BC"><span class="toc-number">7.3.</span> <span class="toc-text">多变量赋值</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2"><span class="toc-number">8.</span> <span class="toc-text">字符串</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E4%B8%89%E7%A7%8D%E5%AE%9A%E4%B9%89%E6%96%B9%E5%BC%8F"><span class="toc-number">8.1.</span> <span class="toc-text">字符串的三种定义方式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%8B%BC%E6%8E%A5"><span class="toc-number">8.2.</span> <span class="toc-text">字符串拼接</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%A0%BC%E5%BC%8F%E5%8C%96"><span class="toc-number">8.3.</span> <span class="toc-text">字符串格式化</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%A0%BC%E5%BC%8F%E5%8C%96%E7%9A%84%E7%B2%BE%E5%BA%A6%E6%8E%A7%E5%88%B6"><span class="toc-number">8.4.</span> <span class="toc-text">字符串格式化的精度控制</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BF%AB%E9%80%9F%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%A0%BC%E5%BC%8F%E5%8C%96"><span class="toc-number">8.5.</span> <span class="toc-text">快速字符串格式化</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AF%B9%E8%A1%A8%E8%BE%BE%E5%BC%8F%E8%BF%9B%E8%A1%8C%E6%A0%BC%E5%BC%8F%E5%8C%96"><span class="toc-number">8.6.</span> <span class="toc-text">对表达式进行格式化</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E8%BE%93%E5%85%A5"><span class="toc-number">9.</span> <span class="toc-text">数据输入</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Posts</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/08/25/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6/" title="时间复杂度：大O表示法与常见复杂度分析">时间复杂度：大O表示法与常见复杂度分析</a><time datetime="2026-08-24T16:00:00.000Z" title="Created 2026-08-25 00:00:00">2026-08-25</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/08/25/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%A3%E5%88%97%E8%A1%A8/" title="散列表：哈希函数、冲突解决与映射实现">散列表：哈希函数、冲突解决与映射实现</a><time datetime="2026-08-24T16:00:00.000Z" title="Created 2026-08-25 00:00:00">2026-08-25</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/08/25/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%BA%BF%E6%80%A7%E7%BB%93%E6%9E%84/" title="线性结构：栈、队列、双端队列与列表">线性结构：栈、队列、双端队列与列表</a><time datetime="2026-08-24T16:00:00.000Z" title="Created 2026-08-25 00:00:00">2026-08-25</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/08/01/Python/%E5%B8%B8%E7%94%A8%E5%86%85%E7%BD%AE%E5%87%BD%E6%95%B0/" title="Python 常用内置函数与基础操作">Python 常用内置函数与基础操作</a><time datetime="2026-08-01T04:29:00.000Z" title="Created 2026-08-01 12:29:00">2026-08-01</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/06/13/daily/Git%20&amp;%20GitHub/" title="Git &amp; GitHub：一文理清版本控制、分支、回退与协作流程">Git &amp; GitHub：一文理清版本控制、分支、回退与协作流程</a><time datetime="2026-06-13T13:00:00.000Z" title="Created 2026-06-13 21:00:00">2026-06-13</time></div></div></div></div></div></div></main><footer id="footer"><div class="footer-other"><div class="footer-copyright"><span class="copyright">&copy;&nbsp;2025 - 2026 By Fan Yunfei</span><span class="framework-info"><span>Framework </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 8.1.1</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.5.4</a></span></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Reading Mode"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="Toggle Between Light and Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle Between Single-column and Double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="Settings"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="Table of Contents"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="Scroll to Comments"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="Back to Top"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=5.5.4"></script><script src="/js/main.js?v=5.5.4"></script><div class="js-pjax"><script>(() => {
+  const isShuoshuo = GLOBAL_CONFIG_SITE.pageType === 'shuoshuo'
+  const option = null
+
+  const commentCount = n => {
+    const isCommentCount = document.querySelector('#post-meta .gitalk-comment-count')
+    if (isCommentCount) {
+      isCommentCount.textContent= n
+    }
+  }
+
+  const initGitalk = (el, path) => {
+    if (isShuoshuo) {
+      window.shuoshuoComment.destroyGitalk = () => {
+        if (el.children.length) {
+          el.innerHTML = ''
+          el.classList.add('no-comment')
+        }
+      }
+    }
+
+    const gitalk = new Gitalk({
+      clientID: 'Ov23licoZTpI8uUvbVWs',
+      clientSecret: '57d90b175c0a229e57775f5235499c2590bf0a84',
+      repo: 'NimbusFan.github.io',
+      owner: 'NimbusFan',
+      admin: ['NimbusFan'],
+      updateCountCallback: commentCount,
+      ...option,
+      id: isShuoshuo ? path : (option && option.id) || 'e2f79fccfb14513fd2b67c1c6e68001d'
+    })
+
+    gitalk.render('gitalk-container')
+  }
+
+  const loadGitalk = async(el, path) => {
+    if (typeof Gitalk === 'function') initGitalk(el, path)
+    else {
+      await btf.getCSS('https://unpkg.com/gitalk@1.8.0/dist/gitalk.css')
+      await btf.getScript('https://unpkg.com/gitalk@1.8.0/dist/gitalk.min.js')
+      initGitalk(el, path)
+    }
+  }
+
+  if (isShuoshuo) {
+    'Gitalk' === 'Gitalk'
+      ? window.shuoshuoComment = { loadComment: loadGitalk }
+      : window.loadOtherComment = loadGitalk
+    return
+  }
+
+  if ('Gitalk' === 'Gitalk' || !false) {
+    if (false) btf.loadComment(document.getElementById('gitalk-container'), loadGitalk)
+    else loadGitalk()
+  } else {
+    window.loadOtherComment = loadGitalk
+  }
+})()</script></div><script src="https://unpkg.com/pjax@0.2.8/pjax.min.js" defer="defer"></script><script>document.addEventListener('DOMContentLoaded', () => {
+  const pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+  window.pjax = new Pjax({
+    elements: 'a:not([target="_blank"])',
+    selectors: pjaxSelectors,
+    cacheBust: false,
+    analytics: false,
+    scrollRestoration: false
+  })
+
+  const triggerPjaxFn = (val) => {
+    if (!val) return
+    Object.values(val).forEach(fn => {
+      try {
+        fn()
+      } catch (err) {
+        console.debug('Pjax callback failed:', err)
+      }
+    })
+  }
+
+  document.addEventListener('pjax:send', () => {
+    // removeEventListener
+    btf.removeGlobalFnEvent('pjaxSendOnce')
+    btf.removeGlobalFnEvent('themeChange')
+
+    // reset readmode
+    const $bodyClassList = document.body.classList
+    if ($bodyClassList.contains('read-mode')) $bodyClassList.remove('read-mode')
+
+    triggerPjaxFn(window.globalFn.pjaxSend)
+  })
+
+  document.addEventListener('pjax:complete', () => {
+    btf.removeGlobalFnEvent('pjaxCompleteOnce')
+    document.querySelectorAll('script[data-pjax]').forEach(item => {
+      const newScript = document.createElement('script')
+      const content = item.text || item.textContent || item.innerHTML || ""
+      Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+      newScript.appendChild(document.createTextNode(content))
+      item.parentNode.replaceChild(newScript, item)
+    })
+
+    triggerPjaxFn(window.globalFn.pjaxComplete)
+  })
+
+  document.addEventListener('pjax:error', e => {
+    if (e.request.status === 404) {
+      false
+        ? pjax.loadUrl('/404.html')
+        : window.location.href = e.request.responseURL
+    }
+  })
+})</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">Search</span><i class="fas fa-spinner fa-pulse" id="loading-status" hidden="hidden"></i><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="text-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  Loading Database</span></div><div class="local-search-input"><input placeholder="Search for Posts" type="text"/></div><hr/><div id="local-search-results"></div><div class="ais-Pagination" id="local-search-pagination" style="display:none;"><ul class="ais-Pagination-list"></ul></div><div id="local-search-stats"></div></div><div id="search-mask"></div><script src="/js/search/local-search.js?v=5.5.4"></script></div></div></body></html>

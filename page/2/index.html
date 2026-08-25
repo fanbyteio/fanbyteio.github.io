@@ -1,0 +1,260 @@
+<!DOCTYPE html><html lang="en" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>Yunfei’s BLOG</title><meta name="author" content="Fan Yunfei"><meta name="copyright" content="Fan Yunfei"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#fbfaf7"><meta property="og:type" content="website">
+<meta property="og:title" content="Yunfei’s BLOG">
+<meta property="og:url" content="https://nimbusfan.github.io/page/2/index.html">
+<meta property="og:site_name" content="Yunfei’s BLOG">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://nimbusfan.github.io/img/avatar.jpg">
+<meta property="article:author" content="Fan Yunfei">
+<meta property="article:tag" content="Code, Think, Build.">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://nimbusfan.github.io/img/avatar.jpg"><script type="application/ld+json"></script><link rel="shortcut icon" href="/img/favicon.svg"><link rel="canonical" href="https://nimbusfan.github.io/page/2/index.html"><link rel="preconnect" href="//unpkg.com"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=5.5.4"><link rel="stylesheet" href="https://unpkg.com/@fortawesome/fontawesome-free@7.1.0/css/all.min.css"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!true && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#2f2a26')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#fbfaf7')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"pagination":{"enable":false,"hitsPerPage":8},"languages":{"hits_empty":"No results found for: ${query}","hits_stats":"${hits} articles found"}},
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":false},
+  copy: {
+    success: 'Copy Successful',
+    error: 'Copy Failed',
+    noSupport: 'Browser Not Supported'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: 'Just now',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: undefined,
+  lightbox: 'null',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://unpkg.com/@egjs/infinitegrid@4.13.0/dist/infinitegrid.min.js',
+    buttonText: 'Load More'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Yunfei’s BLOG',
+  isHighlightShrink: false,
+  isToc: false,
+  pageType: 'home'
+}</script><style>html,body,#body-wrap{background:#fbfaf7;color:#2f2a26;}#page-header:before{background:rgba(45,39,35,.38)!important;}#recent-posts>.recent-post-item,.card-widget,#post,#page,#archive,#tag,#category{background:#fffdf8;border-color:rgba(59,52,48,.14);}</style><link rel="stylesheet" href="/css/custom.css"><meta name="generator" content="Hexo 8.1.1"></head><body><div class="bg-animation" id="web_bg" style="background-color: #f3efe8;"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/img/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">19</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">40</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">9</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/projects/"><i class="fa-fw fas fa-code"></i><span> Projects</span></a></div><div class="menus_item"><a class="site-page" href="/resume/"><i class="fa-fw fas fa-file-alt"></i><span> Resume</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-user"></i><span> About</span></a></div></div></div></div><div class="page" id="body-wrap"><header class="full_page" id="page-header" style="background-image: url(/img/bg.jpg);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">Yunfei’s BLOG</span></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> Search</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/projects/"><i class="fa-fw fas fa-code"></i><span> Projects</span></a></div><div class="menus_item"><a class="site-page" href="/resume/"><i class="fa-fw fas fa-file-alt"></i><span> Resume</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-user"></i><span> About</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="site-info"><h1 id="site-title">Yunfei’s BLOG</h1><div id="site_social_icons"><a class="social-icon" href="https://github.com/NimbusFan" target="_blank" title="fab fa-github"><i class="GitHub"></i></a><a class="social-icon" href="mailto:gisfanyunfei@gmail.com" target="_blank" title="fas fa-envelope"><i class="Email"></i></a></div></div><div id="scroll-down"><i class="fas fa-angle-down scroll-down-effects"></i></div></header><main class="layout" id="content-inner"><div class="recent-posts nc" id="recent-posts"><div class="recent-post-items"><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2026/03/24/Python/%E5%BC%82%E5%B8%B8%E3%80%81%E6%A8%A1%E5%9D%97%E4%B8%8E%E5%8C%85/" title="Python 异常处理与模块化开发">Python 异常处理与模块化开发</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2026-03-24T04:07:40.000Z" title="Created 2026-03-24 12:07:40">2026-03-24</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/Python-%E6%8A%80%E6%9C%AF%E7%AC%94%E8%AE%B0/">Python 技术笔记</a><i class="fas fa-angle-right article-meta-link"></i><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/Python-%E6%8A%80%E6%9C%AF%E7%AC%94%E8%AE%B0/%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95%E4%B8%8E%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">基础语法与数据结构</a></span></div><div class="content">异常1.什么是异常:程序运行的过程中出现了错误2.bug是什么意思:就是指异常的意思，历史上因为小虫子(bug)导致计算机失灵的案例，所以延续至今，bug就代表软件出现错误。  异常的捕获捕获常规异常：1234try:	可能发生错误的代码except:	如果出现异常执行的代码 捕获指定异常：1234try:	print(name)except NameError as e:	print(&#x27;变量名称未定义错误&#x27;) 捕获多个异常：当捕获多个异常时，把要捕获的异常类型的名字放在except 后，并使用元组的方式进行书写。 1234try:	print(1/0)except (NameError, ZeroDivisionError):	print(&#x27;ZeroDivision错误...&#x27;) 异常else：else表示的是如果没有异常要执行的代码。 123456try:	print(1)except Exception as e:	print(e)else:	print(&#x27;我是else，是没有异常的时候执行的代码) 异常的finally：f...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2026/03/18/Python/%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C/" title="Python 文件读写与数据持久化">Python 文件读写与数据持久化</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2026-03-18T15:20:00.000Z" title="Created 2026-03-18 23:20:00">2026-03-18</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/Python-%E6%8A%80%E6%9C%AF%E7%AC%94%E8%AE%B0/">Python 技术笔记</a><i class="fas fa-angle-right article-meta-link"></i><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/Python-%E6%8A%80%E6%9C%AF%E7%AC%94%E8%AE%B0/%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95%E4%B8%8E%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">基础语法与数据结构</a></span></div><div class="content">文件的编码1.什么是编码?编码就是一种规则集合，记录了内容和二进制间进行相互转换的逻辑。编码有许多种，最常用的是UTF-8编码2.为什么需要使用编码?计算机只认识0和1，所以需要将内容翻译成0和1才能保存在计算机中。同时也需要编码，将计算机保存的0和1，反向翻译回可以识别的内容。  文件的读取打开文件使用open函数打开一个已经存在的文件，或者创建一个新文件，语法:open(name, mode, encoding) 1f= open(&#x27;python.txt&#x27;,&#x27;r&#x27;, encoding=” UTF-8)		#encoding的顺序不是第三位，所以不能用位置参数，用关键字参数直接指定   name:要打开的目标文件名的字符串(可以包含文件所在的具体路径)。 mode:设置打开文件的模式:只读、写入、追加等。 encoding:编码格式(推荐使用UTF-8)  注意:此时的f是open函数的文件对象，对象是Python中一种特殊的数据类型，拥有属性和方法，可以使用对象.属性或对象.方法对其进行访问    模式 描述    r 以只读方式打开文...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2026/03/17/Python/%E5%87%BD%E6%95%B0%E8%BF%9B%E9%98%B6/" title="Python 函数进阶：作用域、参数与匿名函数">Python 函数进阶：作用域、参数与匿名函数</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2026-03-17T12:20:00.000Z" title="Created 2026-03-17 20:20:00">2026-03-17</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/Python-%E6%8A%80%E6%9C%AF%E7%AC%94%E8%AE%B0/">Python 技术笔记</a><i class="fas fa-angle-right article-meta-link"></i><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/Python-%E6%8A%80%E6%9C%AF%E7%AC%94%E8%AE%B0/%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95%E4%B8%8E%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">基础语法与数据结构</a></span></div><div class="content">函数多返回值1234def test_return():    return 1, &quot;Hello&quot;, Truex, y, z = test_return()print(x, y, z)  函数多种传参方式位置参数调用函数时根据函数定义的参数位置来传递参数 12345def user_info(name, age, gender):    print(f&quot;姓名是：&#123;name&#125;,年龄是：&#123;age&#125;,性别是：&#123;gender&#125;&quot;)# 位置参数user_info(&#x27;小明&#x27;, 20, &#x27;男&#x27;)  关键字参数调用函数时通过“键 &#x3D; 值”的形式传递参数，消除参数的顺序需求 123456789def user_info(name, age, gender)    print(f&quot;您的名字是:&#123;name&#125;，年龄是:&#123;age&#125;,性别是:&#123;gender&#125;&quot;)#关键字传参user...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2026/03/16/Python/%E6%95%B0%E6%8D%AE%E5%AE%B9%E5%99%A8/" title="Python 数据结构：列表、元组、集合与字典">Python 数据结构：列表、元组、集合与字典</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2026-03-16T09:15:00.000Z" title="Created 2026-03-16 17:15:00">2026-03-16</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/Python-%E6%8A%80%E6%9C%AF%E7%AC%94%E8%AE%B0/">Python 技术笔记</a><i class="fas fa-angle-right article-meta-link"></i><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/Python-%E6%8A%80%E6%9C%AF%E7%AC%94%E8%AE%B0/%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95%E4%B8%8E%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">基础语法与数据结构</a></span></div><div class="content">数据容器一种可以容纳多份数据的数据类型，每一份数据称之为1个元素。元素可以是任意类型的数据。 数据容器根据是否支持重复元素、是否可以修改、是否有序的不同，分为5类，分别是:列表(list)、元组(tuple)、字符串(str)、集合(set)、字典(dict)  list列表的定义和特点定义123456789# 字面量[元素1，元素2，元素3，元素4，...]# 定义变量变量名称 = [元素1，元素2，元素3，元素4，...]# 定义空列表变量名称 = []变量名称 = list()  特点 可以容纳多个元素（上限为2**63-1、9223372036854775807个） 可以容纳不同类型的元素（混装） 数据是有序存储的（有下标序号） 允许重复数据存在 可以修改（增加或删除元素等） 支持嵌套  列表的下标（索引）通过下标索引可取出列表中特定位置的数据 正向索引 1234my_list = [&quot;fanyunfei&quot;, &quot;dashuaibi&quot;, &quot;youqianduojin&quot;]print(my_list[0])    # ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2026/03/15/Python/%E5%87%BD%E6%95%B0%E5%9F%BA%E7%A1%80/" title="Python 函数基础：定义、参数与返回值">Python 函数基础：定义、参数与返回值</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2026-03-15T08:17:00.000Z" title="Created 2026-03-15 16:17:00">2026-03-15</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/Python-%E6%8A%80%E6%9C%AF%E7%AC%94%E8%AE%B0/">Python 技术笔记</a><i class="fas fa-angle-right article-meta-link"></i><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/Python-%E6%8A%80%E6%9C%AF%E7%AC%94%E8%AE%B0/%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95%E4%B8%8E%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">基础语法与数据结构</a></span></div><div class="content">函数的基础定义123def 函数名(传入参数):    函数体    return 返回值  注意：  参数&#x2F;返回值如不需要，可以省略 如果不使用return，函数会返回None，类型是：&lt;class ‘NoneType’&gt; 函数必须先定义后使用   函数的传入参数 函数定义中的参数为形式参数 函数调用中的参数为实际参数 函数的参数数量不限(0~N)，使用逗号分隔开 传入参数的时候，要和形式参数一一对应，逗号隔开?   函数返回值函数返回值的定义123456def 函数(参数...):    函数体    return 返回值# 通过return关键字向调用者返回数据变量=函数(参数)  函数体在遇到return后就结束，写在return后的代码不会执行 None类型什么是NoneNone是类型’NoneType’的字面量，用于表示:空的、无意义的 函数如何返回None 不使用return语句即返回None 主动return None  使用场景 用在函数无返回值上  用在if判断上：在if判断中，None等同于False；一般用于在函数中主动返回None，...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2026/03/14/Python/%E5%BE%AA%E7%8E%AF%E7%BB%93%E6%9E%84/" title="Python 循环结构：while 与 for 的使用">Python 循环结构：while 与 for 的使用</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2026-03-14T09:33:00.000Z" title="Created 2026-03-14 17:33:00">2026-03-14</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/Python-%E6%8A%80%E6%9C%AF%E7%AC%94%E8%AE%B0/">Python 技术笔记</a><i class="fas fa-angle-right article-meta-link"></i><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/Python-%E6%8A%80%E6%9C%AF%E7%AC%94%E8%AE%B0/%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95%E4%B8%8E%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">基础语法与数据结构</a></span></div><div class="content">While 循环while 循环适用于“只要条件满足，就一直执行”的场景。 基础应用while 循环的基础语法如下： 12345while 条件:	满足条件时要做的事情1    满足条件时要做的事情2    ...    满足条件时要做的事情N  ⚠️ 注意事项： 条件类型： 条件的结果一定要是 bool 类型 。防止死循环： 必须要设置循环的终止条件 。层级关系： 严格通过空格缩进来判断代码的归属 。 While 循环嵌套在复杂的逻辑中，我们可以在循环内部再嵌套循环： 123456while 条件1:    满足条件1时要做的事情1    ...     while 条件2:        满足条件2时要做的事情1        ...   注意：  需要设置循环的终止条件 通过空格缩进来判断归属   For 循环基础语法for 循环主要用于遍历（依次取出）数据集中的元素。 12for 临时变量 in 待处理数据集(序列):    循环满足条件时执行的代码  这里的“待处理数据集”，严格来说称之为序列类型 。 序列类型是指其内容可以一个个依次取出的一种数据类型，包括：字符串、列...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2026/03/13/Python/%E6%9D%A1%E4%BB%B6%E5%88%A4%E6%96%AD%E4%B8%8E%E9%80%BB%E8%BE%91%E6%8E%A7%E5%88%B6/" title="Python 条件判断与逻辑控制">Python 条件判断与逻辑控制</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2026-03-13T11:46:00.000Z" title="Created 2026-03-13 19:46:00">2026-03-13</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/Python-%E6%8A%80%E6%9C%AF%E7%AC%94%E8%AE%B0/">Python 技术笔记</a><i class="fas fa-angle-right article-meta-link"></i><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/Python-%E6%8A%80%E6%9C%AF%E7%AC%94%E8%AE%B0/%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95%E4%B8%8E%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">基础语法与数据结构</a></span></div><div class="content">布尔类型和比较运算符布尔类型在 Python 中，布尔类型的字面量用 True 表示真，False 表示假。 比较运算符在逻辑判断中，我们经常需要对比两个值。Python 提供了以下比较运算符：    运算符 描述说明    == 判断内容是否相等，满足为True，不满足为False   != 判断内容是否不相等，满足为True，不满足为 False   &gt; 判断运算符左侧内容是否大于右侧满足为True，不满足为False   &lt; 判断运算符左侧内容是否小于右侧满足为True，不满足为 False   &gt;= 判断运算符左侧内容是否大于等于右侧满足为True，不满足为 False   &lt;= 判断运算符左侧内容是否小于等于右侧满足为True，不满足为 False    if 语句最基础的条件判断语句格式如下： 12345if 要判断的条件:    满足条件时要做的事情1    满足条件时要做的事情2    ...    满足条件时要做的事情N   ⚠️ 注意事项：  判断条件的结果一定要是 bool 类型 。 判断条件后必须要有冒号 : 。 归属于 if 语句...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2026/03/12/Python/%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/" title="Python 基础语法：变量、类型与表达式">Python 基础语法：变量、类型与表达式</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2026-03-12T07:30:00.000Z" title="Created 2026-03-12 15:30:00">2026-03-12</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/Python-%E6%8A%80%E6%9C%AF%E7%AC%94%E8%AE%B0/">Python 技术笔记</a><i class="fas fa-angle-right article-meta-link"></i><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/Python-%E6%8A%80%E6%9C%AF%E7%AC%94%E8%AE%B0/%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95%E4%B8%8E%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">基础语法与数据结构</a></span></div><div class="content">字面量常用的值的类型：  注释单行注释： 1# 单行注释  多行注释： 1234&quot;&quot;&quot;    多行注释    使用一对三个双引号引起来&quot;&quot;&quot;   变量12a = 10   # 赋值a = a - 10  #运算  print语句可以输出多份数据 1print(内容1，内容2，......，内容N)   数据类型123456# 直接查看数据类型string_type = type(&quot;fanyunfei&quot;)  # 查看变量的数据类型name = &quot;fanyunfei&quot;name_type = type(name)     数据类型转换123int()   # 转整数float()  # 转浮点数str()   # 转字符串  注意：只含有数字的字符串才可转为整数&#x2F;浮点数，但浮点数形式的字符串无法直接转整数  标识符标识符命名规则：（1）内容限定： ​    只允许出现中文、字母、数字、下划线。 ​    不推荐使用中文，不能以数字作为开头 （2）大小写敏感 （3）不可使用关键字...</div></div></div><div class="recent-post-item"><div class="post_cover"><a href="/2026/03/11/daily/Hexo%20%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/" title="Hexo 博客搭建：GitHub Pages 部署与 Butterfly 主题配置"><img class="post-bg" src="/img/bg.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Hexo 博客搭建：GitHub Pages 部署与 Butterfly 主题配置"></a></div><div class="recent-post-info"><a class="article-title" href="/2026/03/11/daily/Hexo%20%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/" title="Hexo 博客搭建：GitHub Pages 部署与 Butterfly 主题配置">Hexo 博客搭建：GitHub Pages 部署与 Butterfly 主题配置</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2026-03-11T15:15:00.000Z" title="Created 2026-03-11 23:15:00">2026-03-11</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/">博客搭建</a></span></div><div class="content">在学习和开发过程中，零散的代码片段、配置记录和排错经验很容易被遗忘，但是只把笔记保存在本地也不是长久之计，于是我着手搭建了一个可以长期维护、方便检索、也能够对外展示的BLOG。 我选择的是 Hexo + GitHub Pages + Butterfly 这一套方案：  Hexo：生成静态博客，部署简单，生态成熟； GitHub Pages：免费托管静态网页，适合个人技术博客； Butterfly：基于 Hexo 的高可配置主题，视觉效果和功能扩展都比较完善。  这篇文章记录从初始化、本地预览、GitHub Pages 部署，到 Butterfly 主题配置过程中遇到的问题和解决方法。  环境准备在开始之前，需要先安装以下工具：    工具 作用    Node.js 提供 npm 环境，用于安装 Hexo 和相关依赖   Git 用于拉取主题、管理代码和部署到 GitHub   Hexo 静态博客生成器   GitHub Pages 博客网页托管平台   安装完成后，可以在终端中检查版本： 123node -vnpm -vgit --version  确认环境正常后，安装 Hex...</div></div></div></div><nav id="pagination"><div class="pagination"><a class="extend prev" rel="prev" href="/"><i class="fas fa-chevron-left fa-fw"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/img/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">Fan Yunfei</div><div class="author-info-description"></div><div class="site-data"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">19</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">40</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">9</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/NimbusFan"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons"><a class="social-icon" href="https://github.com/NimbusFan" target="_blank" title="fab fa-github"><i class="GitHub"></i></a><a class="social-icon" href="mailto:gisfanyunfei@gmail.com" target="_blank" title="fas fa-envelope"><i class="Email"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>Announcement</span></div><div class="announcement_content">I document my projects, technical notes, and spatial data analysis here.</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Posts</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/08/25/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6/" title="时间复杂度：大O表示法与常见复杂度分析">时间复杂度：大O表示法与常见复杂度分析</a><time datetime="2026-08-24T16:00:00.000Z" title="Created 2026-08-25 00:00:00">2026-08-25</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/08/25/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%A3%E5%88%97%E8%A1%A8/" title="散列表：哈希函数、冲突解决与映射实现">散列表：哈希函数、冲突解决与映射实现</a><time datetime="2026-08-24T16:00:00.000Z" title="Created 2026-08-25 00:00:00">2026-08-25</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/08/25/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%BA%BF%E6%80%A7%E7%BB%93%E6%9E%84/" title="线性结构：栈、队列、双端队列与列表">线性结构：栈、队列、双端队列与列表</a><time datetime="2026-08-24T16:00:00.000Z" title="Created 2026-08-25 00:00:00">2026-08-25</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/08/01/Python/%E5%B8%B8%E7%94%A8%E5%86%85%E7%BD%AE%E5%87%BD%E6%95%B0/" title="Python 常用内置函数与基础操作">Python 常用内置函数与基础操作</a><time datetime="2026-08-01T04:29:00.000Z" title="Created 2026-08-01 12:29:00">2026-08-01</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/06/13/daily/Git%20&amp;%20GitHub/" title="Git &amp; GitHub：一文理清版本控制、分支、回退与协作流程">Git &amp; GitHub：一文理清版本控制、分支、回退与协作流程</a><time datetime="2026-06-13T13:00:00.000Z" title="Created 2026-06-13 21:00:00">2026-06-13</time></div></div></div></div><div class="card-widget card-categories"><div class="item-headline">
+            <i class="fas fa-folder-open"></i>
+            <span>Categories</span>
+            <a class="card-more-btn" href="/categories/" title="View More">
+      <i class="fas fa-angle-right"></i></a>
+          </div>
+          <ul class="card-category-list expandBtn" id="aside-cat-list">
+            <li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Git/"><span class="card-category-list-name">Git</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item parent"><a class="card-category-list-link" href="/categories/Python-%E6%8A%80%E6%9C%AF%E7%AC%94%E8%AE%B0/"><span class="card-category-list-name">Python 技术笔记</span><span class="card-category-list-count">14</span><i class="fas fa-caret-left expand"></i></a><ul class="card-category-list child"><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Python-%E6%8A%80%E6%9C%AF%E7%AC%94%E8%AE%B0/%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95%E4%B8%8E%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"><span class="card-category-list-name">基础语法与数据结构</span><span class="card-category-list-count">9</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Python-%E6%8A%80%E6%9C%AF%E7%AC%94%E8%AE%B0/%E5%A4%A7%E6%95%B0%E6%8D%AE%E4%B8%8E%E5%88%86%E5%B8%83%E5%BC%8F%E8%AE%A1%E7%AE%97/"><span class="card-category-list-name">大数据与分布式计算</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Python-%E6%8A%80%E6%9C%AF%E7%AC%94%E8%AE%B0/%E6%95%B0%E6%8D%AE%E5%BA%93%E4%B8%8E%E5%90%8E%E7%AB%AF%E5%BC%80%E5%8F%91/"><span class="card-category-list-name">数据库与后端开发</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Python-%E6%8A%80%E6%9C%AF%E7%AC%94%E8%AE%B0/%E8%BF%9B%E9%98%B6%E7%BC%96%E7%A8%8B%E4%B8%8E%E5%B7%A5%E7%A8%8B%E5%9F%BA%E7%A1%80/"><span class="card-category-list-name">进阶编程与工程基础</span><span class="card-category-list-count">2</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Python-%E6%8A%80%E6%9C%AF%E7%AC%94%E8%AE%B0/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/"><span class="card-category-list-name">面向对象程序设计</span><span class="card-category-list-count">1</span></a></li></ul></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/"><span class="card-category-list-name">博客搭建</span><span class="card-category-list-count">1</span></a></li>
+          </ul></div><div class="card-widget card-tags"><div class="item-headline"><i class="fas fa-tags"></i><span>Tags</span></div><div class="card-tag-cloud"><a href="/tags/%E5%86%85%E7%BD%AE%E5%87%BD%E6%95%B0/" style="font-size: 1.1em; color: #999">内置函数</a> <a href="/tags/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/" style="font-size: 1.1em; color: #999">正则表达式</a> <a href="/tags/%E8%BF%9C%E7%A8%8B%E5%8D%8F%E4%BD%9C/" style="font-size: 1.1em; color: #999">远程协作</a> <a href="/tags/%E5%8F%8C%E7%AB%AF%E9%98%9F%E5%88%97/" style="font-size: 1.1em; color: #999">双端队列</a> <a href="/tags/%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6/" style="font-size: 1.1em; color: #999">时间复杂度</a> <a href="/tags/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/" style="font-size: 1.1em; color: #999">面向对象</a> <a href="/tags/%E6%95%A3%E5%88%97%E8%A1%A8/" style="font-size: 1.1em; color: #999">散列表</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E5%AE%B9%E5%99%A8/" style="font-size: 1.1em; color: #999">数据容器</a> <a href="/tags/%E5%87%BD%E6%95%B0/" style="font-size: 1.1em; color: #999">函数</a> <a href="/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B/" style="font-size: 1.1em; color: #999">多线程</a> <a href="/tags/JSON/" style="font-size: 1.1em; color: #999">JSON</a> <a href="/tags/%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6/" style="font-size: 1.1em; color: #999">版本控制</a> <a href="/tags/Socket/" style="font-size: 1.1em; color: #999">Socket</a> <a href="/tags/Hexo/" style="font-size: 1.1em; color: #999">Hexo</a> <a href="/tags/PyEcharts/" style="font-size: 1.1em; color: #999">PyEcharts</a> <a href="/tags/%E9%80%BB%E8%BE%91%E6%8E%A7%E5%88%B6/" style="font-size: 1.1em; color: #999">逻辑控制</a> <a href="/tags/%E5%87%BD%E6%95%B0%E8%BF%9B%E9%98%B6/" style="font-size: 1.1em; color: #999">函数进阶</a> <a href="/tags/%E9%98%9F%E5%88%97/" style="font-size: 1.1em; color: #999">队列</a> <a href="/tags/%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/" style="font-size: 1.1em; color: #999">基础语法</a> <a href="/tags/%E6%A8%A1%E5%9D%97%E4%B8%8E%E5%8C%85/" style="font-size: 1.1em; color: #999">模块与包</a> <a href="/tags/Pull-Request/" style="font-size: 1.1em; color: #999">Pull_Request</a> <a href="/tags/%E5%BC%80%E5%8F%91%E6%95%88%E7%8E%87/" style="font-size: 1.1em; color: #999">开发效率</a> <a href="/tags/%E8%A3%85%E9%A5%B0%E5%99%A8/" style="font-size: 1.1em; color: #999">装饰器</a> <a href="/tags/%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C/" style="font-size: 1.1em; color: #999">文件操作</a> <a href="/tags/GitHub/" style="font-size: 1.1em; color: #999">GitHub</a> <a href="/tags/%E5%BE%AA%E7%8E%AF%E7%BB%93%E6%9E%84/" style="font-size: 1.1em; color: #999">循环结构</a> <a href="/tags/Git/" style="font-size: 1.1em; color: #999">Git</a> <a href="/tags/%E9%80%92%E5%BD%92/" style="font-size: 1.1em; color: #999">递归</a> <a href="/tags/python/" style="font-size: 1.1em; color: #999">python</a> <a href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" style="font-size: 1.1em; color: #999">设计模式</a> <a href="/tags/SQL/" style="font-size: 1.1em; color: #999">SQL</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E5%8F%AF%E8%A7%86%E5%8C%96/" style="font-size: 1.1em; color: #999">数据可视化</a> <a href="/tags/%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86/" style="font-size: 1.1em; color: #999">异常处理</a> <a href="/tags/Python/" style="font-size: 1.5em; color: #99a9bf">Python</a> <a href="/tags/Butterfly/" style="font-size: 1.1em; color: #999">Butterfly</a> <a href="/tags/%E9%97%AD%E5%8C%85/" style="font-size: 1.1em; color: #999">闭包</a> <a href="/tags/%E5%88%86%E6%94%AF%E7%AE%A1%E7%90%86/" style="font-size: 1.1em; color: #999">分支管理</a> <a href="/tags/PySpark/" style="font-size: 1.1em; color: #999">PySpark</a> <a href="/tags/%E6%A0%88/" style="font-size: 1.1em; color: #999">栈</a> <a href="/tags/%E5%93%88%E5%B8%8C%E8%A1%A8/" style="font-size: 1.1em; color: #999">哈希表</a></div></div><div class="card-widget card-archives">
+    <div class="item-headline">
+      <i class="fas fa-archive"></i>
+      <span>Archives</span>
+      
+    </div>
+  
+    <ul class="card-archive-list">
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/2026/08/">
+            <span class="card-archive-list-date">
+              August 2026
+            </span>
+            <span class="card-archive-list-count">4</span>
+          </a>
+        </li>
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/2026/06/">
+            <span class="card-archive-list-date">
+              June 2026
+            </span>
+            <span class="card-archive-list-count">1</span>
+          </a>
+        </li>
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/2026/05/">
+            <span class="card-archive-list-date">
+              May 2026
+            </span>
+            <span class="card-archive-list-count">3</span>
+          </a>
+        </li>
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/2026/04/">
+            <span class="card-archive-list-date">
+              April 2026
+            </span>
+            <span class="card-archive-list-count">1</span>
+          </a>
+        </li>
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/2026/03/">
+            <span class="card-archive-list-date">
+              March 2026
+            </span>
+            <span class="card-archive-list-count">10</span>
+          </a>
+        </li>
+      
+    </ul>
+  </div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>Website Info</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">Article Count :</div><div class="item-count">19</div></div><div class="webinfo-item"><div class="item-name">Total Word Count :</div><div class="item-count">27k</div></div><div class="webinfo-item"><div class="item-name">Unique Visitors :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">Page Views :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">Last Update :</div><div class="item-count" id="last-push-date" data-lastPushDate="2026-08-25T06:44:50.653Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer"><div class="footer-other"><div class="footer-copyright"><span class="copyright">&copy;&nbsp;2025 - 2026 By Fan Yunfei</span><span class="framework-info"><span>Framework </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 8.1.1</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.5.4</a></span></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="Toggle Between Light and Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle Between Single-column and Double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="Settings"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="Back to Top"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=5.5.4"></script><script src="/js/main.js?v=5.5.4"></script><div class="js-pjax"></div><script src="https://unpkg.com/pjax@0.2.8/pjax.min.js" defer="defer"></script><script>document.addEventListener('DOMContentLoaded', () => {
+  const pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+  window.pjax = new Pjax({
+    elements: 'a:not([target="_blank"])',
+    selectors: pjaxSelectors,
+    cacheBust: false,
+    analytics: false,
+    scrollRestoration: false
+  })
+
+  const triggerPjaxFn = (val) => {
+    if (!val) return
+    Object.values(val).forEach(fn => {
+      try {
+        fn()
+      } catch (err) {
+        console.debug('Pjax callback failed:', err)
+      }
+    })
+  }
+
+  document.addEventListener('pjax:send', () => {
+    // removeEventListener
+    btf.removeGlobalFnEvent('pjaxSendOnce')
+    btf.removeGlobalFnEvent('themeChange')
+
+    // reset readmode
+    const $bodyClassList = document.body.classList
+    if ($bodyClassList.contains('read-mode')) $bodyClassList.remove('read-mode')
+
+    triggerPjaxFn(window.globalFn.pjaxSend)
+  })
+
+  document.addEventListener('pjax:complete', () => {
+    btf.removeGlobalFnEvent('pjaxCompleteOnce')
+    document.querySelectorAll('script[data-pjax]').forEach(item => {
+      const newScript = document.createElement('script')
+      const content = item.text || item.textContent || item.innerHTML || ""
+      Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+      newScript.appendChild(document.createTextNode(content))
+      item.parentNode.replaceChild(newScript, item)
+    })
+
+    triggerPjaxFn(window.globalFn.pjaxComplete)
+  })
+
+  document.addEventListener('pjax:error', e => {
+    if (e.request.status === 404) {
+      false
+        ? pjax.loadUrl('/404.html')
+        : window.location.href = e.request.responseURL
+    }
+  })
+})</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">Search</span><i class="fas fa-spinner fa-pulse" id="loading-status" hidden="hidden"></i><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="text-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  Loading Database</span></div><div class="local-search-input"><input placeholder="Search for Posts" type="text"/></div><hr/><div id="local-search-results"></div><div class="ais-Pagination" id="local-search-pagination" style="display:none;"><ul class="ais-Pagination-list"></ul></div><div id="local-search-stats"></div></div><div id="search-mask"></div><script src="/js/search/local-search.js?v=5.5.4"></script></div></div></body></html>
